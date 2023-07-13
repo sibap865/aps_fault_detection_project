@@ -12,6 +12,4 @@ uvicorn==0.18.3
 watchfiles==0.17.0
 websockets==10.3
 wincertstore==0.2
-xgboost ==1.6.2
-PyYAML
--e .
+xgboost==1.6.2

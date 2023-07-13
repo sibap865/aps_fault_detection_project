@@ -1,14 +1,26 @@
+import pymongo
+import pandas as pd
+import json
+# Provide the mongodb localhost url to connect python to mongodb.
+client = pymongo.MongoClient("mongodb+srv://apsdata:clone123@cluster0.t3zj5ri.mongodb.net/?retryWrites=true&w=majority")
 
-from pymongo.mongo_client import MongoClient
+DATA_FILE_PATH="aps_failure_training_set1.csv"
+DATABASE_NAME="aps"
+COLLECTION_NAME="sensor"
 
-uri = "mongodb+srv://apsdata:clone123@cluster0.t3zj5ri.mongodb.net/?retryWrites=true&w=majority"
 
-# Create a new client and connect to the server
-client = MongoClient(uri)
+if __name__=="__main__":
+    data =client["aps"]
+    data =data["sensor"]
+    data =data.find()
+    df = pd.read_json(data)
+    print(f"Rows and columns: {df.shape}")
+    print("done")
 
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
+
+
+
+
+
+
+
