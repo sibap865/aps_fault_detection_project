@@ -1,0 +1,12 @@
+.conda
+artifact
+logs
+notebook
+saved_models
+*.egg-info
+.env
+data_dump.py
+main.py
+README.md
+test.ipynb
+test.py
