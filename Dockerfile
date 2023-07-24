@@ -1,5 +1,5 @@
 FROM python:3.8
-USER ROOT
+USER root
 RUN mkdir /app
 COPY . /app/
 WORKDIR /app/
